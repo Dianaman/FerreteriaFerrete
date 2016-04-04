@@ -26,23 +26,24 @@
 	</form>
 
 	<?php
-		var_dump($_POST);
+		echo var_dump($_POST) . "<br>";
+		$per = $_POST['uno'] * $_POST['dos'];
+		$radio = $_POST['tres'] * 2 * 3.1416;
 
 		if(isset($_POST['rectangular'])){
-			echo ($_POST["uno"] * $_POST["dos"])*3;
+			echo "Perímetro: ". $per*3;
 		}
 		if(isset($_POST['circular'])){
-			echo ($_POST["tres"]*2*3.14)*3;
+			echo "Radio: " . $radio*3;
 		}
 		if(isset($_POST['cementocal'])){
 			if(isset($_POST["uno"]) && isset($_POST["dos"])) {
-				$per = $_POST['uno'] * $_POST['dos'];
-				echo "Cemento: " + $per * 2 + " bolsas.<br>";
-				echo "Cal: " + $per * 3 + " bolsas.";
+				echo "Cemento: " . $per * 2 . " bolsas.<br>";
+				echo "Cal: " . $per * 3 . " bolsas.";
 			}
 			elseif (isset($_POST["tres"])){
-				echo "Cemento: " + $_POST["tres"] * 2 + " bolsas.<br>";
-				echo "Cal: " + $_POST["tres"] * 3 + " bolsas.";
+				echo "Cemento: " . $radio * 2 . " bolsas.<br>";
+				echo "Cal: " . $radio * 3 . " bolsas.";
 			}
 		}
 	?>
